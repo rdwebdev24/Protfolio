@@ -47,6 +47,25 @@ body{
      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
      transform:translate(-50%,-50%);
 }
+#card{
+     cursor: pointer;
+     width: 100%;
+     gap: 0.5rem;
+     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+     padding:0.8rem 0.6rem;
+}
+.trans-info{
+     display: flex;
+     justify-content: space-between;
+}
+.description{
+     display: block;
+     overflow: hidden;
+     transition: all 0.3s linear
+}
+.hidden{
+     display: none;
+}
 #payment_history{
      border-right: 4px solid red;
 }

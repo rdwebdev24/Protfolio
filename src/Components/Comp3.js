@@ -33,6 +33,21 @@ function Comp3({ transaction, settransaction, setTrans }) {
           placeholder="Enter Amount"
         />
       </div>
+      <div className="mb-3">
+        <label htmlFor="exampleFormControlInput1" className="form-label">
+          Description
+        </label>
+        <textarea
+          onChange={(e) =>
+            settransaction({ ...transaction, Desc: e.target.value })
+          }
+          rows="3"
+          type="text"
+          className="form-control"
+          id="exampleFormControlInput1"
+          placeholder="enter description"
+        />
+      </div>
       <div style={{display:"flex",gap:"0.5rem",flexDirection:"column"}}>
         <button
           onClick={() => {setTrans("form-control");document.querySelector('#form').style.display = "none" }}

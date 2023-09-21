@@ -5,7 +5,7 @@ import Comp2 from './Comp2'
 import Comp3 from './Comp3'
 
 function Wrapper() {
-     const [transaction , settransaction] = useState({Name:"" , Amount:""})
+     const [transaction , settransaction] = useState({Name:"" , Amount:"",Desc:"no description :/"})
      const [transArr ,  settransArr] = useState(localStorage.getItem('expenseArr')?JSON.parse(localStorage.getItem('expenseArr')):[])
      const  [rerender , setrerender] = useState(false)
 
