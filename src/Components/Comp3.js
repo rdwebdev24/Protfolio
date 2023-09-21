@@ -2,7 +2,7 @@ import React from "react";
 
 function Comp3({ transaction, settransaction, setTrans }) {
   return (
-    <div className="text-start m-3">
+    <div id="form" className="text-start">
       <h3>Add new transaction</h3>
       <hr />
       <div className="mb-3">
@@ -33,13 +33,20 @@ function Comp3({ transaction, settransaction, setTrans }) {
           placeholder="Enter Amount"
         />
       </div>
-      <div>
+      <div style={{display:"flex",gap:"0.5rem",flexDirection:"column"}}>
         <button
-          onClick={() => setTrans("form-control")}
+          onClick={() => {setTrans("form-control");document.querySelector('#form').style.display = "none" }}
           className="add btn w-100 text-white"
           style={{ backgroundColor: "purple" }}
         >
           Add transaction
+        </button>
+        <button
+          onClick={() =>{ document.querySelector('#form').style.display = "none" }}
+          className="add btn w-100 text-white"
+          style={{ backgroundColor: "crimson" }}
+        >
+          cancel transaction
         </button>
       </div>
     </div>
