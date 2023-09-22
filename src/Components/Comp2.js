@@ -2,12 +2,15 @@ import React, { useState } from 'react'
 import {AiFillDelete} from 'react-icons/ai'
 
 function Comp2({transArr , clearAll, deleteOne}) {
-  const [openDescriptions, setOpenDescriptions] = useState([]);
+     const [activeIndex, setActiveIndex] = useState(null);
 
-  const toggleDescription = (index) => {
-    const updatedOpenDescriptions = [...openDescriptions];
-    updatedOpenDescriptions[index] = !updatedOpenDescriptions[index];
-    setOpenDescriptions(updatedOpenDescriptions);
+     const toggleDescription = (index) => {
+       if (activeIndex === index) {setActiveIndex(null);}
+       else {setActiveIndex(index);}
+     document.querySelectorAll('.description').forEach((item,id)=>{
+          const displayStyle = index === id ? 'flex' : 'none';
+          item.style.display = displayStyle;
+     })
   };
 
   return (
@@ -24,13 +27,13 @@ function Comp2({transArr , clearAll, deleteOne}) {
                          <span>{item.Name}</span> 
                          <span>{amt}</span> <span style={{cursor:"pointer"}} className='delete-btn' onClick={()=>deleteOne(index)}><AiFillDelete/></span>
                     </div>
-                     <div  className={`description ${openDescriptions[index] ? '' : 'hidden'}`}>
+                     <div  className={`description ${activeIndex === index ? 'active' : ''}`}>
                          <span>{item.Desc}</span>
                          <span style={{fontSize:"0.8rem"}}> <b> {(new Date).toLocaleDateString()} </b> </span>
                      </div>
                 </div>
                 })}
-                <div>
+                <div style={{padding:0}}>
                      {transArr.length?<button onClick={clearAll} className="mt-2 w-100 btn btn-danger">Clear All</button>:''}
                 </div>
            </div>
