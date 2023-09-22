@@ -59,9 +59,14 @@ body{
      justify-content: space-between;
 }
 .description{
-     display: block;
+     display: flex;
+     justify-content: space-between;
+     gap: 1rem;
      overflow: hidden;
-     transition: all 0.3s linear
+     transition: all 0.3s linear;
+     border-top: 1px solid #eee;
+     padding-top: 0.5rem;
+     align-items: center;
 }
 .hidden{
      display: none;

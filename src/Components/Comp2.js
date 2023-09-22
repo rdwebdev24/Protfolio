@@ -9,6 +9,7 @@ function Comp2({transArr , clearAll, deleteOne}) {
     updatedOpenDescriptions[index] = !updatedOpenDescriptions[index];
     setOpenDescriptions(updatedOpenDescriptions);
   };
+
   return (
     <div style={{margin:"1rem 0"}}>
       <h3 className='text-start'>History</h3>
@@ -23,7 +24,10 @@ function Comp2({transArr , clearAll, deleteOne}) {
                          <span>{item.Name}</span> 
                          <span>{amt}</span> <span style={{cursor:"pointer"}} className='delete-btn' onClick={()=>deleteOne(index)}><AiFillDelete/></span>
                     </div>
-                     <div className={`description ${openDescriptions[index] ? '' : 'hidden'}`}>{item.Desc}</div>
+                     <div  className={`description ${openDescriptions[index] ? '' : 'hidden'}`}>
+                         <span>{item.Desc}</span>
+                         <span style={{fontSize:"0.8rem"}}> <b> {(new Date).toLocaleDateString()} </b> </span>
+                     </div>
                 </div>
                 })}
                 <div>
