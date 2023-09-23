@@ -22,14 +22,14 @@ function Comp2({transArr , clearAll, deleteOne}) {
                 {transArr.length?"":"No transaction history"}
                 {transArr.map((item , index)=>{
                      var amt = parseInt(item.Amount)
-                     return  <div  onClick={() => toggleDescription(index)} id='card' key={Math.random()*Math.random()} className="bg-white col d-flex flex-column" style={{borderRight:`${(amt <= 0)?"4px solid red":"4px solid green"}`}}>
+                     return  <div  onClick={() => toggleDescription(index)} id='card' key={Math.random()*Math.random()} className="bg-white col d-flex flex-column" style={{borderRight:`${(amt < 0)?"4px solid crimson":"4px solid green"}`}}>
                      <div className='trans-info'>
                          <span>{item.Name}</span> 
                          <span>{amt}</span> <span style={{cursor:"pointer"}} className='delete-btn' onClick={()=>deleteOne(index)}><AiFillDelete/></span>
                     </div>
                      <div  className={`description ${activeIndex === index ? 'active' : ''}`}>
                          <span>{item.Desc}</span>
-                         <span style={{fontSize:"0.8rem"}}> <b> {(new Date).toLocaleDateString()} </b> </span>
+                         <span style={{fontSize:"0.8rem"}}> <b> {item.date} </b> </span>
                      </div>
                 </div>
                 })}

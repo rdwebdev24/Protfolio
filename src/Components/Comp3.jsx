@@ -48,7 +48,7 @@ function Comp3({ transaction, settransaction, setTrans }) {
           placeholder="enter description"
         />
       </div>
-      <div style={{display:"flex",gap:"0.5rem",flexDirection:"column"}}>
+      <div className="form-btn-wrap" style={{display:"flex",gap:"0.5rem"}}>
         <button
           onClick={() => {setTrans("form-control");document.querySelector('#form').style.display = "none" }}
           className="add btn w-100 text-white"
