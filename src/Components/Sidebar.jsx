@@ -28,7 +28,7 @@ export const Sidebar = ({searchTransaction,filterTransaction}) => {
         </div>
 
         <div className="search-box">
-            <input onChange={(e)=>searchTransaction(e)} placeholder='seach transaction' type="search"  id="seachinp" />
+            <input onChange={(e)=>searchTransaction(e)} placeholder='seach transaction' autoComplete="off" type="search" id="seachinp" />
             <div className="search-icon"><BsSearch/></div>
             <div className="search-list">
                 {filterTransaction.map((item,index)=>{
