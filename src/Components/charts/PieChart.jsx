@@ -18,8 +18,8 @@ export const PieChart = () => {
         indexLabelFontColor: "white",
         startAngle: -90,
         dataPoints: [
-          { y: pieVal.income, label: "income", color:"#FF6464" },
-          { y: (-1)*pieVal.expense, label: "expense",color:"#6BCB77" },
+          { y: pieVal.income, label: "income", color:"#6BCB77" },
+          { y: (-1)*pieVal.expense, label: "expense",color:"#FF6464" },
         ],
       },
     ],
